@@ -1,0 +1,62 @@
+{
+  "console" : {
+    "verbose" : false,
+    "batch" : false,
+    "traceLog" : false,
+    "debugLog" : false
+  },
+  "testCreation" : {
+    "advancedTests" : {
+      "enabled" : false
+    },
+    "essentialTests" : {
+      "fuzzingIterations" : 1000,
+      "stopOnFirstSuccess" : false,
+      "spring" : false,
+      "activeProfiles" : "",
+      "disableSecurityPolicy" : false,
+      "springIntegrationTests" : true,
+      "keepTestsWithNoAssertions" : false,
+      "coverAllEnums" : false,
+      "perMethodTimeoutMillis" : 20000
+    },
+    "testValidation" : {
+      "enabled" : true,
+      "complianceLevel" : null,
+      "command" : "./mvnw test",
+      "ignoreStylechecks" : false,
+      "timeout" : "30m"
+    },
+    "report" : {
+      "outFile" : ".diffblue/report.json"
+    },
+    "mockPrefixes" : [ ],
+    "mockInputs" : true
+  },
+  "output" : {
+    "location" : {
+      "testOutputDir" : "src/test/java",
+      "mergeExistingTests" : true
+    },
+    "naming" : {
+      "classNameTemplate" : "${CLASS_NAME}DiffblueCliTest",
+      "methodNameTemplate" : "test${INNER_CLASS_NAME}${METHOD_NAME}"
+    },
+    "style" : {
+      "inlining" : {
+        "constants" : true,
+        "arrangeIntoActAssert" : false,
+        "actIntoAssert" : false,
+        "constructors" : true,
+        "joinSimpleTests" : true
+      },
+      "comments" : {
+        "outputComments" : false
+      }
+    }
+  },
+  "workingDirectory" : ".",
+  "targetDirectory" : ".diffblue",
+  "systemProperties" : {
+  }
+}
